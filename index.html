@@ -59,7 +59,36 @@ Ví dụ: /9j/4AAQSkZJRg... hoặc data:image/jpeg;base64,/9j/..."></textarea>
 </div>
 
 <div id="tool-screen" style="display:none">
+  <!-- Nền gradient + hoa văn để không bao giờ trắng -->
+  <div class="tool-bg">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+
+  <!-- Khung game (nếu bị chặn sẽ hiện placeholder bên dưới) -->
   <iframe id="gameFrame" src="about:blank" class="game-frame"></iframe>
+
+  <!-- Placeholder khi iframe không load được -->
+  <div class="frame-fallback" id="frameFallback" style="display:none">
+    <div class="ff-box">
+      <div class="ff-icon">🎮</div>
+      <h2 class="ff-title">Không nhúng được trang game</h2>
+      <p class="ff-desc">Trang <b>lc79b.bet</b> đã chặn nhúng iframe (X-Frame-Options).<br>Bấm nút bên dưới để mở trong tab mới:</p>
+      <button class="ff-btn" onclick="window.open('https://lc79b.bet/','_blank')">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> MỞ TRANG CHÍNH
+      </button>
+      <p class="ff-hint">💡 Tool vẫn hoạt động bình thường — chỉ là không thấy được trang game phía sau thôi.</p>
+    </div>
+  </div>
+
+  <!-- Header nhỏ phía trên để có thể mở trang chính -->
+  <div class="tool-topbar">
+    <button class="topbar-btn" onclick="window.open('https://lc79b.bet/','_blank')" title="Mở trang chính">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </button>
+  </div>
+
   <div id="app-content">
     <div class="drag-group" id="drag-md5" style="top:78px;left:18px">
       <div class="predict-card" id="predict-card-md5">
